@@ -4,8 +4,8 @@ import {
   Mail,
   MapPin,
   Phone,
-  Sparkles,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 import "./Footer.css";
 
@@ -83,30 +83,30 @@ const Footer = () => {
                 EXPLORE
               </div>
 
-              <a href="/destinations">
+              <Link to="/destinations">
                 <span>Destinations</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/packages">
+              <Link to="/packages">
                 <span>Luxury Packages</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/experiences">
+              <Link to="/experiences">
                 <span>Experiences</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/gallery">
+              <Link to="/gallery">
                 <span>Gallery</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/journal">
+              <Link to="/journal">
                 <span>Travel Journal</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
             </div>
 
@@ -120,20 +120,20 @@ const Footer = () => {
                 COMPANY
               </div>
 
-              <a href="/about">
+              <Link to="/about">
                 <span>Our Story</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/contact">
+              <Link to="/contact">
                 <span>Contact</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
-              <a href="/plan-trip">
+              <Link to="/contact">
                 <span>Plan Your Trip</span>
                 <ArrowUpRight size={15} />
-              </a>
+              </Link>
 
               <a href="#">
                 <span>Privacy Policy</span>
