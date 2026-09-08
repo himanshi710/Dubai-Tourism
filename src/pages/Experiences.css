@@ -1,0 +1,1154 @@
+/* =========================================================
+   DUBAI EXPERIENCES — LUXURY RESPONSIVE
+   ========================================================= */
+
+:root {
+  --primary: #0d1b2a;
+  --primary-dark: #08131f;
+  --accent: #c8a96b;
+  --accent-light: #e2c98f;
+
+  --white: #ffffff;
+  --cream: #f7f4ed;
+  --text: #18222c;
+  --muted: #71808c;
+  --border: #e5e1d8;
+  --dark-border: #263442;
+}
+
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
+
+.experiences-page {
+  width: 100%;
+  overflow: hidden;
+  background: var(--cream);
+  color: var(--text);
+}
+
+.experiences-page *,
+.experiences-page *::before,
+.experiences-page *::after {
+  box-sizing: border-box;
+}
+
+.experiences-page a {
+  text-decoration: none;
+}
+
+.experiences-page .container {
+  width: min(1180px, calc(100% - 80px));
+  margin: 0 auto;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.experiences-hero {
+  position: relative;
+  min-height: 780px;
+  display: flex;
+  align-items: center;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 19, 31, 0.96) 0%,
+      rgba(8, 19, 31, 0.82) 45%,
+      rgba(8, 19, 31, 0.42) 100%
+    ),
+    url("https://images.unsplash.com/photo-1546412414-e1885259563a?auto=format&fit=crop&w=2200&q=90")
+    center / cover no-repeat;
+  isolation: isolate;
+}
+
+.experiences-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(8, 19, 31, 0.45),
+      transparent 35%,
+      rgba(8, 19, 31, 0.8)
+    );
+  z-index: -1;
+}
+
+.experiences-overlay {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+}
+
+.experiences-hero-content {
+  position: relative;
+  z-index: 2;
+  padding-top: 110px;
+  padding-bottom: 80px;
+}
+
+.experiences-hero-content > span {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 28px;
+  color: var(--accent-light);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.experiences-hero-content > span::before {
+  content: "";
+  width: 42px;
+  height: 1px;
+  background: var(--accent);
+}
+
+.experiences-hero-content h1 {
+  max-width: 900px;
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(64px, 8vw, 126px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -5px;
+}
+
+.experiences-hero-content h1 em {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+  letter-spacing: -4px;
+}
+
+.experiences-hero-content p {
+  max-width: 550px;
+  margin: 40px 0 0;
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 16px;
+  line-height: 1.9;
+}
+
+
+/* =========================================================
+   INTRO SECTION
+   ========================================================= */
+
+.experiences-section {
+  padding: 110px 0;
+  background: var(--cream);
+}
+
+.experiences-intro {
+  position: relative;
+  max-width: 900px;
+  margin-bottom: 70px;
+  text-align: center;
+}
+
+.experiences-intro::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -35px;
+  width: 1px;
+  height: 25px;
+  background: var(--accent);
+}
+
+.experiences-intro > span {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 22px;
+  color: var(--accent);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.experiences-intro h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(42px, 5vw, 72px);
+  font-weight: 500;
+  line-height: 0.95;
+  letter-spacing: -3px;
+}
+
+.experiences-intro h2 em {
+  display: block;
+  margin-top: 8px;
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+
+/* =========================================================
+   EXPERIENCE GRID
+   ========================================================= */
+
+.experience-page-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1px;
+  background: var(--border);
+  border: 1px solid var(--border);
+}
+
+.experience-page-card {
+  position: relative;
+  min-height: 390px;
+  display: flex;
+  flex-direction: column;
+  padding: 34px 32px 30px;
+  overflow: hidden;
+  background: var(--white);
+  transition:
+    background 0.45s ease,
+    color 0.45s ease,
+    transform 0.45s ease;
+}
+
+.experience-page-card:hover {
+  z-index: 2;
+  background: var(--primary);
+  color: var(--white);
+  transform: translateY(-5px);
+}
+
+.experience-page-top {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--accent);
+}
+
+.experience-page-top > span {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+
+.experience-page-top svg {
+  transition: transform 0.4s ease;
+}
+
+.experience-page-card:hover .experience-page-top svg {
+  transform: rotate(45deg);
+}
+
+.experience-card-content {
+  position: relative;
+  z-index: 2;
+  margin-top: auto;
+  padding-top: 70px;
+}
+
+.experience-card-category {
+  display: block;
+  margin-bottom: 16px;
+  color: var(--accent);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+}
+
+.experience-page-card h3 {
+  margin: 0 0 16px;
+  color: var(--primary);
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.1;
+  letter-spacing: -0.5px;
+  transition: color 0.4s ease;
+}
+
+.experience-page-card:hover h3 {
+  color: var(--white);
+}
+
+.experience-page-card p {
+  max-width: 350px;
+  margin: 0;
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.8;
+  transition: color 0.4s ease;
+}
+
+.experience-page-card:hover p {
+  color: rgba(255, 255, 255, 0.62);
+}
+
+.experience-card-bottom {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-top: 28px;
+  padding-top: 20px;
+  border-top: 1px solid var(--border);
+  transition: border-color 0.4s ease;
+}
+
+.experience-page-card:hover .experience-card-bottom {
+  border-color: rgba(255, 255, 255, 0.16);
+}
+
+.experience-card-location {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+  white-space: nowrap;
+}
+
+.experience-page-card:hover .experience-card-location {
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.experience-card-bottom a {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  color: var(--primary);
+  font-size: 9px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  white-space: nowrap;
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.experience-page-card:hover .experience-card-bottom a {
+  color: var(--accent);
+}
+
+.experience-card-bottom a:hover {
+  gap: 11px;
+}
+
+.experience-page-card::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -80px;
+  width: 220px;
+  height: 220px;
+  border: 1px solid rgba(200, 169, 107, 0.12);
+  border-radius: 50%;
+  transition: transform 0.6s ease;
+}
+
+.experience-page-card:hover::before {
+  transform: scale(1.5);
+}
+
+.experience-page-card::after {
+  content: "";
+  position: absolute;
+  right: 22px;
+  bottom: 42px;
+  width: 90px;
+  height: 1px;
+  background: var(--accent);
+  opacity: 0.2;
+}
+
+
+/* =========================================================
+   FEATURED EXPERIENCE
+   ========================================================= */
+
+.experience-feature {
+  position: relative;
+  min-height: 700px;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  background: var(--primary);
+}
+
+.experience-feature-image {
+  position: absolute;
+  inset: 0;
+  background:
+    url("https://images.unsplash.com/photo-1473580044384-7ba9967e16a0?auto=format&fit=crop&w=2200&q=90")
+    center / cover no-repeat;
+  transform: scale(1.02);
+}
+
+.experience-feature-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      90deg,
+      rgba(8, 19, 31, 0.96) 0%,
+      rgba(8, 19, 31, 0.78) 45%,
+      rgba(8, 19, 31, 0.25) 100%
+    );
+}
+
+.experience-feature-container {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 700px;
+}
+
+.experience-feature-content {
+  max-width: 600px;
+}
+
+.experience-feature-kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 28px;
+  color: var(--accent-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.experience-feature-number {
+  display: block;
+  margin-bottom: 15px;
+  color: rgba(255, 255, 255, 0.25);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.experience-feature h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(55px, 7vw, 100px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+
+.experience-feature h2 em {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.experience-feature p {
+  max-width: 500px;
+  margin: 35px 0;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.experience-feature-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 13px;
+  padding: 15px 23px;
+  border: 1px solid rgba(226, 201, 143, 0.6);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    gap 0.35s ease;
+}
+
+.experience-feature-button:hover {
+  background: var(--accent);
+  color: var(--primary);
+  gap: 18px;
+}
+
+.experience-feature-side {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  margin-right: 5%;
+  writing-mode: vertical-rl;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.experience-feature-side .feature-side-line {
+  width: 1px;
+  height: 90px;
+  background: var(--accent);
+}
+
+.experience-feature-side span {
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.experience-feature-side strong {
+  color: var(--accent);
+  font-size: 12px;
+  letter-spacing: 4px;
+}
+
+
+/* =========================================================
+   PHILOSOPHY
+   ========================================================= */
+
+.experience-philosophy {
+  padding: 120px 0;
+  background: var(--white);
+}
+
+.experience-philosophy-grid {
+  display: grid;
+  grid-template-columns: 90px 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.philosophy-index {
+  padding-top: 8px;
+  color: var(--accent);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.philosophy-title > span {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 3px;
+}
+
+.philosophy-title h2 {
+  margin: 0;
+  color: var(--primary);
+  font-size: clamp(52px, 6vw, 88px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+
+.philosophy-title h2 em {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.philosophy-copy {
+  max-width: 460px;
+  padding-top: 5px;
+}
+
+.philosophy-star {
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  border: 1px solid var(--border);
+  border-radius: 50%;
+  color: var(--accent);
+}
+
+.philosophy-copy p {
+  margin: 0 0 22px;
+  color: var(--muted);
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.philosophy-copy p:first-of-type {
+  color: var(--text);
+  font-size: 20px;
+  line-height: 1.7;
+}
+
+.philosophy-copy a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 15px;
+  color: var(--primary);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+  transition:
+    color 0.3s ease,
+    gap 0.3s ease;
+}
+
+.philosophy-copy a:hover {
+  color: var(--accent);
+  gap: 15px;
+}
+
+
+/* =========================================================
+   FINAL CTA
+   ========================================================= */
+
+.experiences-final {
+  position: relative;
+  min-height: 620px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--primary-dark);
+  text-align: center;
+}
+
+.experiences-final::before {
+  content: "DUBAI";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: rgba(255, 255, 255, 0.025);
+  font-size: clamp(140px, 25vw, 400px);
+  font-weight: 800;
+  letter-spacing: -15px;
+  white-space: nowrap;
+}
+
+.experiences-final-content {
+  position: relative;
+  z-index: 3;
+}
+
+.experiences-final-content > span {
+  display: block;
+  margin-bottom: 25px;
+  color: var(--accent-light);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 4px;
+}
+
+.experiences-final-content h2 {
+  margin: 0;
+  color: var(--white);
+  font-size: clamp(50px, 7vw, 96px);
+  font-weight: 500;
+  line-height: 0.9;
+  letter-spacing: -4px;
+}
+
+.experiences-final-content h2 em {
+  color: var(--accent);
+  font-family: Georgia, "Times New Roman", serif;
+  font-weight: 400;
+}
+
+.experiences-final-content p {
+  max-width: 520px;
+  margin: 32px auto;
+  color: rgba(255, 255, 255, 0.62);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.experiences-final-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 25px;
+  border: 1px solid rgba(226, 201, 143, 0.6);
+  color: var(--white);
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1.8px;
+  transition:
+    background 0.35s ease,
+    color 0.35s ease,
+    gap 0.35s ease;
+}
+
+.experiences-final-button:hover {
+  background: var(--accent);
+  color: var(--primary);
+  gap: 17px;
+}
+
+
+/* =========================================================
+   DECORATIVE RINGS
+   ========================================================= */
+
+.experiences-final-ring {
+  position: absolute;
+  border: 1px solid rgba(200, 169, 107, 0.14);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.ring-one {
+  width: 500px;
+  height: 500px;
+  right: -180px;
+  top: -130px;
+}
+
+.ring-two {
+  width: 700px;
+  height: 700px;
+  left: -300px;
+  bottom: -390px;
+}
+
+
+/* =========================================================
+   LARGE TABLET
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .experiences-page .container {
+    width: min(100% - 50px, 900px);
+  }
+
+  .experiences-hero {
+    min-height: 680px;
+  }
+
+  .experiences-hero-content {
+    padding-top: 90px;
+  }
+
+  .experiences-hero-content h1 {
+    font-size: clamp(58px, 9vw, 90px);
+  }
+
+  .experience-page-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .experience-page-card {
+    min-height: 370px;
+  }
+
+  .experience-philosophy-grid {
+    grid-template-columns: 60px 1fr 1fr;
+    gap: 40px;
+  }
+
+  .experience-feature {
+    min-height: 620px;
+  }
+
+  .experience-feature-container {
+    min-height: 620px;
+  }
+
+}
+
+
+/* =========================================================
+   TABLET / MOBILE
+   ========================================================= */
+
+@media (max-width: 750px) {
+
+  .experiences-page .container {
+    width: calc(100% - 36px);
+  }
+
+
+  /* HERO */
+
+  .experiences-hero {
+    min-height: 620px;
+    align-items: flex-end;
+    background-position: 62% center;
+  }
+
+  .experiences-hero-content {
+    padding-top: 120px;
+    padding-bottom: 65px;
+  }
+
+  .experiences-hero-content > span {
+    margin-bottom: 22px;
+    font-size: 9px;
+    letter-spacing: 2.5px;
+  }
+
+  .experiences-hero-content > span::before {
+    width: 28px;
+  }
+
+  .experiences-hero-content h1 {
+    font-size: clamp(48px, 12vw, 72px);
+    letter-spacing: -3px;
+    line-height: 0.92;
+  }
+
+  .experiences-hero-content h1 em {
+    letter-spacing: -2px;
+  }
+
+  .experiences-hero-content p {
+    max-width: 500px;
+    margin-top: 25px;
+    font-size: 13px;
+    line-height: 1.75;
+  }
+
+
+  /* SECTION */
+
+  .experiences-section {
+    padding: 75px 0;
+  }
+
+  .experiences-intro {
+    margin-bottom: 55px;
+  }
+
+  .experiences-intro h2 {
+    font-size: clamp(38px, 10vw, 58px);
+    letter-spacing: -2px;
+  }
+
+
+  /* GRID */
+
+  .experience-page-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .experience-page-card {
+    min-height: 350px;
+    padding: 28px 25px;
+  }
+
+  .experience-card-content {
+    padding-top: 55px;
+  }
+
+  .experience-page-card h3 {
+    font-size: 23px;
+  }
+
+  .experience-page-card p {
+    font-size: 13px;
+    max-width: 100%;
+  }
+
+  .experience-card-bottom {
+    margin-top: 25px;
+  }
+
+
+  /* FEATURE */
+
+  .experience-feature {
+    min-height: 650px;
+    align-items: flex-end;
+  }
+
+  .experience-feature-image {
+    background-position: 60% center;
+  }
+
+  .experience-feature-overlay {
+    background:
+      linear-gradient(
+        0deg,
+        rgba(8, 19, 31, 0.98) 5%,
+        rgba(8, 19, 31, 0.75) 55%,
+        rgba(8, 19, 31, 0.2) 100%
+      );
+  }
+
+  .experience-feature-container {
+    min-height: 650px;
+    align-items: flex-end;
+    padding-bottom: 65px;
+  }
+
+  .experience-feature-content {
+    max-width: 100%;
+  }
+
+  .experience-feature h2 {
+    font-size: clamp(52px, 13vw, 78px);
+    letter-spacing: -3px;
+  }
+
+  .experience-feature p {
+    margin: 25px 0;
+    font-size: 13px;
+  }
+
+  .experience-feature-side {
+    display: none;
+  }
+
+
+  /* PHILOSOPHY */
+
+  .experience-philosophy {
+    padding: 80px 0;
+  }
+
+  .experience-philosophy-grid {
+    grid-template-columns: 1fr;
+    gap: 30px;
+  }
+
+  .philosophy-index {
+    padding: 0;
+  }
+
+  .philosophy-title h2 {
+    font-size: clamp(50px, 13vw, 75px);
+    letter-spacing: -3px;
+  }
+
+  .philosophy-copy {
+    max-width: 100%;
+  }
+
+  .philosophy-star {
+    margin-bottom: 22px;
+  }
+
+  .philosophy-copy p:first-of-type {
+    font-size: 18px;
+  }
+
+
+  /* FINAL */
+
+  .experiences-final {
+    min-height: 560px;
+    padding: 70px 0;
+  }
+
+  .experiences-final-content h2 {
+    font-size: clamp(47px, 12vw, 70px);
+    letter-spacing: -3px;
+  }
+
+  .experiences-final-content p {
+    max-width: 420px;
+    font-size: 13px;
+  }
+
+  .experiences-final::before {
+    font-size: 32vw;
+    letter-spacing: -5px;
+  }
+
+  .ring-one {
+    width: 330px;
+    height: 330px;
+    right: -180px;
+    top: -80px;
+  }
+
+  .ring-two {
+    width: 450px;
+    height: 450px;
+    left: -220px;
+    bottom: -280px;
+  }
+
+}
+
+
+/* =========================================================
+   SMALL MOBILE
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+  .experiences-page .container {
+    width: calc(100% - 28px);
+  }
+
+
+  /* HERO */
+
+  .experiences-hero {
+    min-height: 570px;
+  }
+
+  .experiences-hero-content {
+    padding-bottom: 48px;
+  }
+
+  .experiences-hero-content > span {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .experiences-hero-content h1 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .experiences-hero-content p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+
+  /* INTRO */
+
+  .experiences-section {
+    padding: 65px 0;
+  }
+
+  .experiences-intro > span {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .experiences-intro h2 {
+    font-size: 37px;
+    letter-spacing: -1.5px;
+  }
+
+
+  /* CARDS */
+
+  .experience-page-card {
+    min-height: 330px;
+    padding: 24px 20px;
+  }
+
+  .experience-page-card h3 {
+    font-size: 21px;
+  }
+
+  .experience-page-card p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .experience-card-bottom {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+  }
+
+  .experience-card-bottom a {
+    font-size: 8px;
+  }
+
+
+  /* FEATURE */
+
+  .experience-feature {
+    min-height: 600px;
+  }
+
+  .experience-feature-container {
+    min-height: 600px;
+    padding-bottom: 48px;
+  }
+
+  .experience-feature-kicker {
+    font-size: 8px;
+    letter-spacing: 2px;
+  }
+
+  .experience-feature h2 {
+    font-size: 48px;
+    letter-spacing: -2px;
+  }
+
+  .experience-feature p {
+    font-size: 12px;
+    line-height: 1.75;
+  }
+
+  .experience-feature-button {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 12px;
+    font-size: 8px;
+  }
+
+
+  /* PHILOSOPHY */
+
+  .experience-philosophy {
+    padding: 70px 0;
+  }
+
+  .philosophy-title h2 {
+    font-size: 50px;
+    letter-spacing: -2px;
+  }
+
+  .philosophy-copy p:first-of-type {
+    font-size: 17px;
+  }
+
+  .philosophy-copy p {
+    font-size: 12px;
+  }
+
+
+  /* FINAL */
+
+  .experiences-final {
+    min-height: 520px;
+  }
+
+  .experiences-final-content > span {
+    font-size: 8px;
+    letter-spacing: 2.5px;
+  }
+
+  .experiences-final-content h2 {
+    font-size: 45px;
+    letter-spacing: -2px;
+  }
+
+  .experiences-final-content p {
+    font-size: 12px;
+    line-height: 1.7;
+  }
+
+  .experiences-final-button {
+    width: 100%;
+    justify-content: center;
+    padding: 15px 10px;
+    font-size: 8px;
+  }
+
+}
